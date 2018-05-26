@@ -1,0 +1,76 @@
+things to add  
+
+sudo apt-get update
+
+ZSH
+
+apt-get install zsh
+apt-get install git-core
+
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+NVM
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
+
+may need to ➜  ~ source ./.zshrc
+
+install NODEJS
+
+nvm install 8.11.1
+
+nvm use 8.11.1
+
+install mongo DB
+
+wget https://andyfelong.com/downloads/core_mongodb_3_0_14.tar.gz 
+
+wget https://andyfelong.com/downloads/tools_mongodb_3_0_14.tar.gz 
+
+tar xvfz core_mongodb_3_0_14.tar.gz   
+tar xvfz tools_mongodb_3_0_14.tar.gz   
+
+mkdir /data/
+mkdir /data/db
+
+sudo chown -R 'youruserid' /data/db
+
+sudo systemctl enable mongodb
+
+mount a usb
+
+➜  ~ sudo mkdir /media/usb
+➜  ~ sudo mount /dev/sda1 /media/usb
+
+restore a database
+
+./mongoresore --db stocker_mongoose /media/usb/stocker_dump/
+
+still need apache, redis, ffmpeg, maybe go?
+
+LETSENCRYPT
+
+$ sudo apt-get update
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:certbot/certbot
+$ sudo apt-get update
+$ sudo apt-get install python-certbot-apache 
+
+sudo apt-get install python-certbot-apache
+
+sudo certbot --apache -d example.com -d www.example.com
+
+ENABLE APACHE PROXY
+
+sudo a2enmod
+
+proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html
+
+sudo service apache2 restart
+
+INSTALL PM2
+
+npm install pm2@latest -g
+
+pm2 start server.js
+
